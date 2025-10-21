@@ -1,0 +1,98 @@
+# Created by BioNetGen 2.9.3
+begin parameters
+    1 INH_0   5000  # Constant
+    2 PG3_0   20000  # Constant
+    3 ADP_0   10000  # Constant
+    4 NADH_0  2000  # Constant
+    5 PGM_0   5000  # Constant
+    6 ENO_0   5000  # Constant
+    7 PKM_0   5000  # Constant
+    8 LDH_0   1000  # Constant
+    9 kf      1e-5  # Constant
+   10 kr      1e-1  # Constant
+   11 kcat    1e-1  # Constant
+   12 kf_inh  1e-3  # Constant
+end parameters
+begin species
+    1 INH() INH_0
+    2 PG3() PG3_0
+    3 ADP() ADP_0
+    4 NADH() NADH_0
+    5 PGM() PGM_0
+    6 ENO() ENO_0
+    7 PKM() PKM_0
+    8 LDH() LDH_0
+    9 INH_PGM() 0
+   10 PGM_PG3() 0
+   11 PKM_ADP() 0
+   12 LDH_NADH() 0
+   13 PG2() 0
+   14 ENO_PG2() 0
+   15 PEP() 0
+   16 PKM_PEP() 0
+   17 PKM_PEP_ADP() 0
+   18 PYR() 0
+   19 ATP() 0
+   20 LDH_PYR() 0
+   21 LDH_PYR_NADH() 0
+   22 LAC() 0
+   23 NAD() 0
+   24 LDH_LAC() 0
+   25 LDH_NAD() 0
+   26 LDH_PYR_NAD() 0
+   27 LDH_LAC_NADH() 0
+   28 LDH_LAC_NAD() 0
+end species
+begin reactions
+    1 1,5 9 kf_inh #_R1
+    2 2,5 10 kf #_R2
+    3 3,7 11 kf #_R7
+    4 4,8 12 2*kf #_R12,_R17
+    5 9 1,5 kr #_reverse__R1
+    6 10 2,5 kr #_reverse__R2
+    7 10 5,13 kcat #_R3
+    8 11 3,7 kr #_reverse__R7
+    9 12 4,8 2*kr #_reverse__R12,_reverse__R17
+   10 6,13 14 kf #_R4
+   11 14 6,13 kr #_reverse__R4
+   12 14 6,15 kcat #_R5
+   13 7,15 16 kf #_R6
+   14 11,15 17 kf #_R8
+   15 16 7,15 kr #_reverse__R6
+   16 17 11,15 kr #_reverse__R8
+   17 3,16 17 kf #_R9
+   18 17 3,16 kr #_reverse__R9
+   19 17 7,18,19 kcat #_R10
+   20 8,18 20 2*kf #_R11,_R16
+   21 12,18 21 2*kf #_R13,_R20
+   22 20 8,18 2*kr #_reverse__R11,_reverse__R16
+   23 21 12,18 2*kr #_reverse__R13,_reverse__R20
+   24 4,20 21 2*kf #_R14,_R21
+   25 21 4,20 2*kr #_reverse__R14,_reverse__R21
+   26 21 8,22,23 2*kcat #_R15,_R28
+   27 8,22 24 kf #_R18
+   28 8,23 25 kf #_R19
+   29 20,23 26 kf #_R24
+   30 12,22 27 kf #_R26
+   31 24 8,22 kr #_reverse__R18
+   32 25 8,23 kr #_reverse__R19
+   33 22,25 28 kf #_R22
+   34 23,24 28 kf #_R23
+   35 26 20,23 kr #_reverse__R24
+   36 4,24 27 kf #_R25
+   37 27 4,24 kr #_reverse__R25
+   38 27 12,22 kr #_reverse__R26
+   39 18,25 26 kf #_R27
+   40 26 18,25 kr #_reverse__R27
+   41 28 22,25 kr #_reverse__R22
+   42 28 23,24 kr #_reverse__R23
+   43 28 4,8,18 kcat #_R29
+end reactions
+begin groups
+    1 NAD                  23
+    2 LAC                  22
+    3 PYR                  18
+    4 PEP                  15
+    5 PG2                  13
+    6 PG3                  2
+end groups

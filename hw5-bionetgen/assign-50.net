@@ -1,0 +1,37 @@
+# Created by BioNetGen 2.9.3
+begin parameters
+    1 INH_0   5000  # Constant
+    2 PG3_0   20000  # Constant
+    3 ADP_0   10000  # Constant
+    4 NADH_0  2000  # Constant
+    5 PGM_0   5000  # Constant
+    6 ENO_0   5000  # Constant
+    7 PKM_0   5000  # Constant
+    8 LDH_0   1000  # Constant
+    9 kf      1e-5  # Constant
+   10 kr      1e-1  # Constant
+   11 kcat    1e-1  # Constant
+   12 kf_inh  1e-3  # Constant
+end parameters
+begin species
+    1 INH(i) INH_0
+    2 PG3() PG3_0
+    3 ADP() ADP_0
+    4 NADH() NADH_0
+    5 PGM(i,s) PGM_0
+    6 ENO() ENO_0
+    7 PKM() PKM_0
+    8 LDH() LDH_0
+    9 INH(i!1).PGM(i!1,s) 0
+end species
+begin reactions
+    1 1,5 9 kf_inh #_R1
+end reactions
+begin groups
+    1 NAD                  
+    2 LAC                  
+    3 PYR                  
+    4 PEP                  
+    5 PG2                  
+    6 PG3                  2
+end groups

@@ -1,0 +1,87 @@
+BioNetGen version 2.9.3
+Reading from file /Users/amritashah/Library/CloudStorage/GoogleDrive-amrita.p.shah@gmail.com/My Drive/Documents/pitt_1_fall_2025/MSCBIO2025/hw5-bionetgen/assign-100/2025_10_03__17_07_46/assign-100.bngl (level 0)
+Read 12 parameters.
+Read 28 molecule types.
+Read 8 species.
+Read 6 observable(s).
+Read 29 reaction rule(s).
+ACTION: generate_network( assign-100 )
+Iteration   0:     8 species      0 rxns  0.00e+00 CPU s
+WARNING: Duplicate of rxn 4 detected. Rules generating this rxn are _R12, _R17.
+Iteration   1:    12 species      4 rxns  0.00e+00 CPU s
+WARNING: Duplicate of rxn 9 detected. Rules generating this rxn are _reverse__R12, _reverse__R17.
+Iteration   2:    13 species      9 rxns  0.00e+00 CPU s
+Iteration   3:    14 species     10 rxns  0.00e+00 CPU s
+Iteration   4:    15 species     12 rxns  0.00e+00 CPU s
+Iteration   5:    17 species     14 rxns  1.00e-02 CPU s
+Iteration   6:    19 species     19 rxns  0.00e+00 CPU s
+WARNING: Duplicate of rxn 20 detected. Rules generating this rxn are _R11, _R16.
+WARNING: Duplicate of rxn 21 detected. Rules generating this rxn are _R13, _R20.
+Iteration   7:    21 species     21 rxns  0.00e+00 CPU s
+WARNING: Duplicate of rxn 22 detected. Rules generating this rxn are _reverse__R11, _reverse__R16.
+WARNING: Duplicate of rxn 23 detected. Rules generating this rxn are _reverse__R13, _reverse__R20.
+WARNING: Duplicate of rxn 24 detected. Rules generating this rxn are _R14, _R21.
+WARNING: Duplicate of rxn 25 detected. Rules generating this rxn are _reverse__R14, _reverse__R21.
+WARNING: Duplicate of rxn 26 detected. Rules generating this rxn are _R15, _R28.
+Iteration   8:    23 species     26 rxns  0.00e+00 CPU s
+Iteration   9:    27 species     30 rxns  0.00e+00 CPU s
+Iteration  10:    28 species     40 rxns  1.00e-02 CPU s
+Iteration  11:    28 species     43 rxns  0.00e+00 CPU s
+Cumulative CPU time for each rule
+Rule   1:     2 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule   2:     2 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule   3:     1 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule   4:     2 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule   5:     1 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule   6:     2 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule   7:     2 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule   8:     2 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule   9:     2 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule  10:     1 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule  11:     2 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule  12:     2 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule  13:     2 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule  14:     2 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule  15:     1 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule  16:     0 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule  17:     0 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule  18:     2 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule  19:     2 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule  20:     0 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule  21:     0 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule  22:     2 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule  23:     2 reactions 1.00e-02 CPU s 5.00e-03 CPU s/rxn
+Rule  24:     2 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule  25:     2 reactions 1.00e-02 CPU s 5.00e-03 CPU s/rxn
+Rule  26:     2 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule  27:     2 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule  28:     0 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule  29:     1 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Total   :    43 reactions 2.00e-02 CPU s 4.65e-04 CPU s/rxn
+Wrote network in net format to ./assign-100.net.
+CPU TIME: generate_network 0.02 s.
+ACTION: simulate( method=>"cvode" )
+TEND:500
+Network simulation using cvode
+WARNING: writeFile(): Overwriting existing file ./assign-100.net.
+Wrote network in net format to ./assign-100.net.
+Running run_network on Amritas-MacBook-Pro.local
+full command: /Users/amritashah/miniforge3/envs/bioinfo/lib/python3.13/site-packages/bionetgen/bng-mac/bin/run_network -o ./assign-100 -p cvode -a 1e-08 -r 1e-08 --cdat 1 --fdat 0 -g ./assign-100.net ./assign-100.net 10.2040816326531 49
+[simulation PID is: 47189]
+run_network 3.0
+Read 12 parameters from ./assign-100.net
+Read 28 species from ./assign-100.net
+Read 6 group(s) from ./assign-100.net
+Read 0 function(s) from ./assign-100.net
+Read 43 reaction(s) from ./assign-100.net
+43 reaction(s) have nonzero rate
+Initialization took 0.00 CPU seconds
+Propagating with cvode using dense LU
+Time course of concentrations written to file ./assign-100.cdat.
+Time course of groups written to file ./assign-100.gdat.
+Propagation took 0.00e+00 CPU seconds
+Program times:  0.00 CPU s 0.00 clock s
+Updating species concentrations from ./assign-100.cdat
+CPU TIME: simulate_ode 0.01 s.
+Finished processing file /Users/amritashah/Library/CloudStorage/GoogleDrive-amrita.p.shah@gmail.com/My Drive/Documents/pitt_1_fall_2025/MSCBIO2025/hw5-bionetgen/assign-100/2025_10_03__17_07_46/assign-100.bngl.
+CPU TIME: total 0.05 s.

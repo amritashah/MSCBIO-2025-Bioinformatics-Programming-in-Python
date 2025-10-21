@@ -1,0 +1,62 @@
+# Created by BioNetGen 2.9.3
+begin parameters
+    1 INH_0   5000  # Constant
+    2 PG3_0   20000  # Constant
+    3 ADP_0   10000  # Constant
+    4 NADH_0  2000  # Constant
+    5 PGM_0   5000  # Constant
+    6 ENO_0   5000  # Constant
+    7 PKM_0   5000  # Constant
+    8 LDH_0   1000  # Constant
+    9 kf      1e-5  # Constant
+   10 kr      1e-1  # Constant
+   11 kcat    1e-1  # Constant
+   12 kf_inh  1e-3  # Constant
+end parameters
+begin species
+    1 INH() INH_0
+    2 PG3() PG3_0
+    3 ADP() ADP_0
+    4 NADH() NADH_0
+    5 PGM() PGM_0
+    6 ENO() ENO_0
+    7 PKM() PKM_0
+    8 LDH() LDH_0
+    9 INH_PGM() 0
+   10 PGM_PG3() 0
+   11 PKM_ADP() 0
+   12 PG2() 0
+   13 ENO_PG2() 0
+   14 PEP() 0
+   15 PKM_PEP() 0
+   16 PKM_PEP_ADP() 0
+   17 PYR() 0
+   18 ATP() 0
+end species
+begin reactions
+    1 1,5 9 kf_inh #_R1
+    2 2,5 10 kf #_R2
+    3 3,7 11 kf #_R7
+    4 9 1,5 kr #_reverse__R1
+    5 10 2,5 kr #_reverse__R2
+    6 10 5,12 kcat #_R3
+    7 11 3,7 kr #_reverse__R7
+    8 6,12 13 kf #_R4
+    9 13 6,12 kr #_reverse__R4
+   10 13 6,14 kcat #_R5
+   11 7,14 15 kf #_R6
+   12 11,14 16 kf #_R8
+   13 15 7,14 kr #_reverse__R6
+   14 16 11,14 kr #_reverse__R8
+   15 3,15 16 kf #_R9
+   16 16 3,15 kr #_reverse__R9
+   17 16 7,17,18 kcat #_R10
+end reactions
+begin groups
+    1 NAD                  
+    2 LAC                  
+    3 PYR                  17
+    4 PEP                  14
+    5 PG2                  12
+    6 PG3                  2
+end groups
